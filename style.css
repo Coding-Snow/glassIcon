@@ -1,0 +1,52 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+/* coding snow */
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ text-transform: capitalize;
+ font-family: 'Poppins', sans-serif;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #371777, #00bce4)
+}
+.glassIcon{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  color: #fff;
+  font-size: 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(2px);
+  margin: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+}
+.glassIcon::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255, 0.5);
+  filter: blur(0);
+  transform: skewX(45deg) translateX(calc(100px + 50%));
+  transition: 400ms;
+}
+.glassIcon:hover{
+  transform: translateY(-20px);
+}
+.glassIcon:hover::before{
+  transform: skewX(45deg) translateX(calc(100px * -1 - 50%));
+}
